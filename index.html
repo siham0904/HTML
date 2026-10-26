@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#101b20" />
+  <title>받지 못한 전화 | 류인혁의 마지막 공중전화</title>
+  <style>
+    :root{--ink:#e5e9e4;--muted:#94a8aa;--mint:#6d9b90;--display:#a7bf91;--accent:#d9bd80;--phone-scale:1}
+    *{box-sizing:border-box}html{min-height:100%;background:#0b151c}body{margin:0;color:var(--ink);font-family:'Malgun Gothic','Apple SD Gothic Neo',system-ui,sans-serif;overflow-x:hidden;min-height:100vh}
+    button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}button:focus-visible{outline:3px solid #e5d093;outline-offset:4px}button:disabled{cursor:not-allowed}
+    .scene{min-height:860px;min-height:max(100dvh,860px);position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(180deg,rgba(6,19,29,.6) 0%,rgba(13,24,29,.18) 40%,rgba(6,9,12,.9) 100%),radial-gradient(ellipse at 62% 42%,#486067 0%,#182b35 36%,#09161e 80%)}
+    .outside{position:absolute;inset:0;overflow:hidden;z-index:-4;filter:saturate(.65)}
+    .outside:before{content:"";position:absolute;inset:8% -15% 3%;background:linear-gradient(90deg,transparent 4%,#20303c 4% 9%,transparent 9% 20%,#14222b 20% 41%,transparent 41% 52%,#1b2833 52% 72%,transparent 72% 80%,#17222d 80%),linear-gradient(0deg,#132029 3%,transparent 48%);opacity:.9;filter:blur(7px)}
+    .lamp{position:absolute;width:18px;height:180px;left:calc(50% - 375px);top:34%;background:linear-gradient(#d9e8c2,#d9e8c2) top/16px 9px no-repeat,linear-gradient(#30424d,#16232e);box-shadow:0 0 25px 10px #d0dbab37;filter:blur(2px)}
+    .lamp:before{content:"";position:absolute;width:220px;height:320px;left:-100px;top:-50px;background:radial-gradient(ellipse at 50% 12%,#f6e7af66,transparent 68%);filter:blur(17px)}
+    .neon{position:absolute;top:30%;right:15%;width:92px;height:55px;opacity:.56;background:repeating-linear-gradient(0deg,#8fbbb3 0 3px,transparent 3px 9px);box-shadow:0 0 55px #a5f0c16b;filter:blur(3px);transform:perspective(300px) rotateY(-30deg)}
+    .road{position:absolute;bottom:9%;width:130%;height:180px;left:-15%;background:linear-gradient(0deg,#070c12,#20323c 35%,transparent 100%);filter:blur(18px)}
+    .road:before{content:"";position:absolute;top:48%;left:25%;width:70%;height:1px;box-shadow:0 0 35px 5px #e5d2a04a;background:#e5d2a04a}
+    .glass{pointer-events:none;position:absolute;inset:50px 7% 0;z-index:-2;background:linear-gradient(90deg,#b4d8d00a 0%,#adcbc115 5%,transparent 20% 70%,#86afa718 94%,#f2fff816 100%);box-shadow:inset 0 0 50px #b3e9d00b,0 0 60px #090f1575;backdrop-filter:blur(1.2px)}
+    .glass:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(93deg,transparent 0 85px,#e1faf005 86px 88px,transparent 89px 150px),linear-gradient(110deg,transparent 35%,#e0f6ea0c 41%,transparent 46% 80%,#edf6ee12 83%,transparent 90%)}
+    .glass:after{content:"";position:absolute;inset:0;background:radial-gradient(2px 13px at 7% 20%,#e1fbdf47,transparent),radial-gradient(3px 19px at 14% 44%,#def5e037,transparent),radial-gradient(2px 22px at 91% 39%,#d9f8e54d,transparent),radial-gradient(2px 10px at 84% 72%,#d9f8e54d,transparent),radial-gradient(1px 9px at 27% 76%,#d9f8e54d,transparent);opacity:.8}
+    .booth{pointer-events:none;position:absolute;inset:0;z-index:-1;max-width:1020px;margin:auto;border-inline:22px solid #253b44;box-shadow:inset 20px 0 24px -18px #c5d3bd44,inset -20px 0 24px -18px #c6d1c34a,0 0 120px 140px #05101b83}
+    .booth:before{content:"";position:absolute;inset:73px -22px auto;height:19px;background:linear-gradient(#3c525a,#182932 60%,#283a40);box-shadow:0 8px 20px #030b109c}
+    .booth:after{content:"";position:absolute;top:52%;left:-22px;right:-22px;height:9px;background:linear-gradient(#354b52,#182b36);box-shadow:0 2px 12px #080f13}
+    .booth-sign{position:absolute;top:0;left:-22px;right:-22px;height:74px;display:flex;align-items:center;justify-content:center;gap:20px;background:linear-gradient(180deg,#356566 0%,#224b50 45%,#153a43 100%);border:1px solid #53817b;border-bottom:4px solid #0b252c;box-shadow:inset 0 6px 10px #ffffff20,0 5px 25px #030b116b;text-shadow:0 2px 5px #062e34}
+    .sign-logo{font-size:13px;font-weight:900;border:2px solid #e8eee5;border-radius:50%;padding:5px 7px;letter-spacing:-1px;transform:rotate(-10deg)}.booth-sign strong{font-size:26px;letter-spacing:14px;font-weight:800}.booth-sign small{font-size:9px;letter-spacing:3px;color:#c0dbd3}
+    #rain{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.56}
+    .vignette{position:absolute;inset:0;z-index:9;pointer-events:none;background:radial-gradient(ellipse at 50% 43%,transparent 30%,#07101721 57%,#020508a8 100%),linear-gradient(180deg,#0008 0%,transparent 19% 76%,#0009 100%)}
+    .topbar{position:absolute;z-index:7;top:99px;left:max(30px,calc(50% - 455px));right:max(30px,calc(50% - 455px));display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+    .eyebrow{display:block;font-size:10px;letter-spacing:3px;color:#9eafa8;text-transform:uppercase}.topbar h1{font-family:Georgia,'Malgun Gothic',serif;font-size:24px;font-weight:500;letter-spacing:1px;margin:7px 0 0;color:#e7ebdd;text-shadow:0 2px 9px #000}
+    .utilities{display:flex;gap:9px;align-items:center}.utility{border:1px solid #a5c5b04c;background:#0719228f;color:#e3e8dc;border-radius:2px;padding:9px 13px;font-size:11px;letter-spacing:.7px;transition:background .2s}.utility:hover{background:#33535a}.utility[aria-pressed=true]{border-color:#d8cf9566;color:#ebdc9b}
+    .phone-anchor{position:relative;z-index:4;width:calc(490px * var(--phone-scale));height:calc(636px * var(--phone-scale));margin:177px auto 0;filter:drop-shadow(16px 26px 27px #000a)}
+    .phone{position:absolute;left:0;top:0;transform:scale(var(--phone-scale));transform-origin:top left;width:490px;height:636px;user-select:none;-webkit-user-select:none}
+    .wall-mount{position:absolute;inset:7px 14px 6px;background:linear-gradient(120deg,#2f484c,#142f36 38%,#21343a 70%,#0f252e);border:3px solid #132930;box-shadow:inset 0 0 20px #0008,8px 14px 0 -4px #08161ba6,18px 20px 35px #0009;border-radius:12px 12px 18px 18px}
+    .device{position:absolute;left:24px;top:0;width:442px;height:615px;border-radius:23px 23px 19px 19px;box-shadow:inset 0 0 0 3px #132e32,inset 4px 5px 10px #ddf2d43d,inset -9px -8px 17px #0b212eb8,2px 7px 1px #07181d,7px 20px 18px #000b;background:linear-gradient(101deg,#3a6666 0%,#6c9890 9%,#577e79 24%,#466f70 40%,#31575b 83%,#2c5257 100%);border:3px solid #1a3e43}
+    .device:before{content:"";position:absolute;inset:8px 10px auto;height:2px;background:#b2d2b442;filter:blur(1px)}
+    .device:after{content:"";position:absolute;inset:0;border-radius:20px;pointer-events:none;background:repeating-linear-gradient(96deg,transparent 0 9px,#e8f1cc08 9px 10px,transparent 10px 18px),linear-gradient(120deg,#fff1,transparent 38%);mix-blend-mode:screen;opacity:.45}
+    .screw{position:absolute;width:11px;height:11px;background:radial-gradient(circle at 38% 36%,#f2e9bb,#738780 46%,#233d41 70%);border:1px solid #27484b;border-radius:100%;box-shadow:1px 1px 2px #152f30;z-index:2}.screw:after{content:"";position:absolute;width:6px;height:1px;background:#395357;left:2px;top:4px;transform:rotate(25deg)}.s1{top:17px;left:19px}.s2{top:17px;right:17px}.s3{bottom:17px;left:19px}.s4{bottom:17px;right:17px}
+    .brandline{position:absolute;top:24px;left:28px;right:27px;height:48px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid #1c41487d}
+    .brandleft{display:flex;align-items:center;gap:9px}.kt{width:46px;height:28px;border-radius:50%;border:2px solid #e4ecd9;color:#e4ecd9;font-family:Arial,sans-serif;font-size:16px;font-weight:900;text-align:center;line-height:24px;letter-spacing:-2px;transform:rotate(-10deg);text-shadow:0 1px #172e33}.brandko{font-size:20px;font-weight:800;letter-spacing:3px;color:#e1e9d9;text-shadow:0 1px 2px #193b3d}.brandinfo{text-align:right;font:9px/1.6 monospace;letter-spacing:1.4px;color:#bed2c6}
+    .inside{position:absolute;left:22px;right:22px;top:90px;bottom:57px;display:flex;gap:12px}
+    .handset-bay{position:relative;width:110px;flex:0 0 110px;border-radius:15px;background:linear-gradient(90deg,#193d43,#315c5e 28%,#1d434b 70%,#12333b);border:2px solid #1e454c;box-shadow:inset 4px 4px 11px #08272bb5,inset -3px 0 4px #92a99a47,2px 2px 2px #86a99d30}
+    .handset-bay:before,.handset-bay:after{content:"";position:absolute;background:#101e24;border-radius:50%;width:38px;height:35px;left:35px;box-shadow:inset 1px 3px 6px #000,0 0 0 4px #507c79}.handset-bay:before{top:26px}.handset-bay:after{bottom:100px}
+    .handset{position:absolute;z-index:3;left:14px;top:16px;width:83px;height:352px;border:0;background:transparent;filter:drop-shadow(5px 8px 5px #000b);transform-origin:50% 72%;transition:transform .35s cubic-bezier(.19,.98,.2,1),filter .25s}
+    .handset:hover{transform:translate(-5px,-5px) rotate(-3deg)}.handset.lifted{transform:translate(-27px,-32px) rotate(-17deg);filter:drop-shadow(12px 14px 8px #000b)}.handset.lifted:hover{transform:translate(-30px,-32px) rotate(-19deg)}
+    .handle-bar{position:absolute;top:36px;left:27px;width:31px;height:280px;border-radius:50% / 10%;background:linear-gradient(90deg,#080f14 0%,#283840 9%,#32434a 20%,#172329 68%,#071014 90%);box-shadow:inset 4px 1px 4px #63727868,inset -3px 0 #01070a}
+    .earpiece,.mouthpiece{position:absolute;left:6px;width:72px;height:83px;border-radius:47% 45% 37% 37%;background:linear-gradient(90deg,#111a20,#3e4d54 16%,#243139 42%,#10191d 73%,#071216);box-shadow:inset 6px 5px 9px #889ba120,inset -5px -4px 9px #0008;border:2px solid #10191f;display:grid;place-items:center}
+    .earpiece{top:0;transform:rotate(5deg)}.mouthpiece{bottom:0;transform:rotate(-5deg)}.earpiece:after,.mouthpiece:after{content:"";width:43px;height:31px;border-radius:50%;background:repeating-radial-gradient(circle,#0c171c 0 2px,#1c2b31 3px 4px);box-shadow:inset 0 2px 6px #0009;opacity:.75}
+    .cord{position:absolute;bottom:6px;left:16px;width:105px;height:117px;overflow:visible;pointer-events:none;filter:drop-shadow(2px 3px 2px #0008)}
+    .cord path{fill:none;stroke:#11191e;stroke-width:7;stroke-linecap:round}.cord path:last-child{stroke:#41535b;stroke-width:1.7;opacity:.5}
+    .action-hint{position:absolute;left:5px;right:5px;bottom:22px;color:#b0d0c5;text-align:center;font-size:9px;letter-spacing:1px;opacity:.9}
+    .faceplate{min-width:0;flex:1;background:linear-gradient(105deg,#87a7a0,#c1c8b6 12%,#a4b3aa 40%,#819e9c 97%);border:3px solid #345a5d;border-radius:13px 13px 12px 12px;box-shadow:inset 2px 3px 4px #fff6,inset -5px -5px 11px #32565958,4px 6px 5px #0b2b32a6;padding:13px 12px 12px;display:flex;flex-direction:column;align-items:stretch;gap:10px}
+    .lcd-housing{height:104px;padding:9px 10px 8px;background:linear-gradient(165deg,#354e50,#526764 54%,#354d50);border:2px solid #374e4d;border-radius:7px;box-shadow:inset 2px 2px 6px #112a2b,1px 2px 2px #f1f7dc70}
+    .lcd{position:relative;height:100%;overflow:hidden;background:linear-gradient(135deg,#8da584 0%,#b5c5a0 29%,#9dae88 100%);box-shadow:inset 2px 3px 7px #455b418c,inset -2px -2px 3px #e8eece8a;border:2px solid #758d76;border-radius:3px;padding:8px 10px;color:#213d30;text-shadow:0 1px #d4dcbc;font-family:'Courier New',monospace}
+    .lcd:after{content:"";pointer-events:none;position:absolute;inset:0;background:repeating-linear-gradient(0deg,#1c443113 0 1px,transparent 1px 4px);opacity:.55}
+    .lcd-meta{display:flex;justify-content:space-between;gap:6px;font-size:10px;line-height:1.1;white-space:nowrap;letter-spacing:.5px;font-weight:700}.lcd-number{margin:10px 0 4px;font-size:20px;font-weight:700;letter-spacing:1.3px;line-height:1.1;overflow:hidden;white-space:nowrap;min-height:22px}.lcd-bottom{font-size:10px;font-family:'Malgun Gothic',sans-serif;letter-spacing:-.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .coin-row{height:67px;display:grid;grid-template-columns:1.2fr .8fr;gap:9px;align-items:stretch}
+    .coin-unit{position:relative;border:2px solid #718986;border-radius:5px;background:linear-gradient(130deg,#5d7775,#bdc9bd 30%,#6c8e8a);box-shadow:inset 2px 2px 5px #223a3b75,1px 1px #eff6db66;padding:8px;text-align:center}
+    .coin-unit small{display:block;color:#203e43;font-weight:800;font-size:10px;letter-spacing:.3px;margin-bottom:7px}.coin-slit{display:block;height:8px;border-radius:10px;border:2px solid #344c4c;background:linear-gradient(#051820,#263e41 60%,#132a30);box-shadow:1px 2px 1px #cce0c385,inset 0 1px 3px #010b11;width:76px;margin:auto}
+    .coin-btn{border:2px solid #917850;border-radius:5px;background:linear-gradient(160deg,#ddcf9a,#ae9463 55%,#9e8256);box-shadow:inset 1px 2px 1px #fff6,2px 3px 3px #1b343b60;color:#342f20;font-weight:800;font-size:12px;line-height:1.25;transition:transform .1s,filter .2s}.coin-btn:hover{filter:brightness(1.1)}.coin-btn:active{transform:translateY(2px)}.coin-btn span{display:block;font:10px/1.4 monospace;font-weight:400}
+    .keyboard-shell{background:linear-gradient(120deg,#607b79,#7f9892 24%,#64817f 82%);border:2px solid #66817e;border-top-color:#385a5b;border-left-color:#355b5f;border-radius:9px;box-shadow:inset 3px 3px 7px #25474b88,1px 2px #dbe7ce9a;padding:11px 9px 10px;flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
+    .keypad{display:grid;grid-template-columns:repeat(3,67px);grid-template-rows:repeat(4,49px);column-gap:10px;row-gap:9px}
+    .key{width:67px;height:49px;position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0;color:#24383a;font-family:Arial,sans-serif;font-size:24px;font-weight:700;line-height:1;border:2px solid #627779;border-radius:7px;background:linear-gradient(152deg,#f1f0df,#d5dacb 38%,#a1aea7 100%);text-shadow:0 1px #fff;box-shadow:inset 2px 2px 2px #fff7,inset -3px -3px 4px #657b7891,0 3px 0 #384f53,1px 5px 4px #162f3c61;transition:filter .12s,transform .09s,box-shadow .09s}
+    .key small{font:6px/1.8 Arial,sans-serif;letter-spacing:1px;color:#657472;text-shadow:none}.key:not(.missing):hover{filter:brightness(1.08)}.key:not(.missing):active,.key.pressed{transform:translateY(3px);box-shadow:inset 2px 2px 4px #6c7b7c85,0 0 0 #384f53;filter:brightness(.85)}
+    .key.missing{background:linear-gradient(130deg,#294c50,#526e6b 35%,#294447);box-shadow:inset 3px 4px 6px #071e2699,0 1px 1px #d1ddca91;border:2px solid #395b5c;color:transparent;text-shadow:none}
+    .key.missing:before,.key.missing:after{content:"";position:absolute;border-radius:50%;width:6px;height:6px;background:radial-gradient(circle,#0e272c 1px,#789390 2px,#213f44 3px);top:9px}.key.missing:before{left:10px}.key.missing:after{right:10px}.key.missing:hover{filter:brightness(1.17)}.key.missing:active{transform:scale(.98)}
+    .secondary-controls{display:flex;gap:8px;height:36px}.small-btn{flex:1;border:1px solid #6c8780;border-bottom:3px solid #506967;border-radius:4px;box-shadow:1px 2px 2px #18353a66,inset 1px 1px #fff8;background:linear-gradient(#d1d5c6,#9eaea5);color:#294042;font-weight:800;font-size:11px}.small-btn:hover{filter:brightness(1.09)}.small-btn:active{transform:translateY(2px);border-bottom-width:1px}.small-btn.call{background:linear-gradient(#b6cdaf,#729a84);border-color:#587b69;color:#123c2b}.small-btn.end{background:linear-gradient(#dbc0ab,#b48773);border-color:#936b58;color:#572e27}
+    .bottom-hardware{position:absolute;bottom:10px;left:30px;right:28px;display:flex;align-items:center;justify-content:space-between;color:#d6e2d4;font-size:10px;letter-spacing:1px}.return-slot{display:flex;align-items:center;gap:9px}.return-slot span{font-size:9px;line-height:1.5;color:#cadece}.return-hole{width:74px;height:24px;border:2px solid #29464b;border-radius:6px;background:linear-gradient(#0c282e,#23444a);box-shadow:inset 0 5px 6px #0008,0 1px #c5dfc34d}.return-button{color:#d4e2d7;font-size:9px;border:1px solid #8ab1a475;border-radius:4px;background:#1d4648;padding:9px 12px;letter-spacing:1px}.return-button:hover{background:#315e59}
+    .warning{position:absolute;z-index:3;right:-113px;bottom:182px;width:94px;padding:9px 6px;transform:rotate(6deg);background:#e2d9b6;color:#4a4b35;box-shadow:2px 4px 13px #0007;font-size:9px;line-height:1.55;text-align:center;font-weight:800}.warning:before{content:"";position:absolute;top:0;left:35px;width:32px;height:10px;background:#f1e8b58c;transform:translateY(-5px) rotate(-5deg)}
+    .caption-panel{position:relative;z-index:5;max-width:550px;margin:24px auto 70px;padding:0 16px;text-align:center}.caption-panel p{margin:0;color:#b6c8c5;font-size:12px;letter-spacing:.6px;text-shadow:0 2px 4px #000}.caption-panel .step{color:#e7ddbc}.caption-panel .status-note{display:block;margin-top:9px;font-family:Georgia,'Malgun Gothic',serif;color:#aec5ba;font-size:12px;min-height:20px;transition:opacity .2s}
+    .toast{position:fixed;z-index:20;left:50%;bottom:26px;transform:translate(-50%,20px);opacity:0;pointer-events:none;max-width:min(400px,calc(100% - 28px));background:#112c32e8;border:1px solid #96b8a75e;color:#e2e6dc;text-align:center;font-size:12px;padding:13px 18px;letter-spacing:.5px;box-shadow:0 6px 28px #0009;transition:transform .3s,opacity .3s}.toast.show{transform:translate(-50%,0);opacity:1}
+    .overlay{position:fixed;inset:0;z-index:30;background:#061018c9;display:grid;place-items:center;padding:20px;backdrop-filter:blur(7px)}.overlay[hidden]{display:none}.modal{position:relative;width:min(100%,440px);background:linear-gradient(135deg,#2d474a,#172e37);border:1px solid #7aa29877;box-shadow:0 20px 80px #000b;padding:31px;color:#e6e7d9}.modal .eyebrow{color:#b3c1aa}.modal h2{font-size:28px;letter-spacing:1px;margin:13px 0 15px}.modal p{font-size:14px;color:#c7d4cb;line-height:2}.modal ol{padding-left:22px;font-size:13px;line-height:2.25;color:#d5ded5}.modal kbd{border:1px solid #668b87;background:#102e35;padding:2px 5px;font:12px monospace}.modal button{display:block;margin-top:24px;width:100%;padding:13px 16px;border:1px solid #9bb9ab;background:#a3b4a2;color:#1b383b;font-weight:800}.modal button:hover{background:#d6e1cb}
+    .credit{position:absolute;bottom:18px;right:24px;z-index:7;color:#93a9a8;font:9px monospace;letter-spacing:2px;opacity:.75}
+    @media(max-height:830px) and (min-width:570px){:root{--phone-scale:.84}.scene{min-height:720px}.phone-anchor{margin-top:153px}.topbar{top:86px}.caption-panel{margin-top:11px}.booth-sign{height:65px}.booth:before{top:64px}}
+    @media(max-width:650px){:root{--phone-scale:.79}.scene{min-height:max(100dvh,730px)}.booth{border-inline-width:13px}.booth-sign{height:62px;left:-13px;right:-13px;gap:10px}.booth-sign strong{font-size:21px;letter-spacing:7px}.booth-sign small{display:none}.booth:before{top:60px;left:-13px;right:-13px}.topbar{left:19px;right:19px;top:86px}.topbar h1{font-size:19px}.eyebrow{font-size:9px;letter-spacing:1.5px}.utility{padding:9px 10px}.phone-anchor{margin-top:146px}.caption-panel{margin-top:17px}.credit{display:none}.warning{display:none}}
+    @media(max-width:400px){:root{--phone-scale:.69}.scene{min-height:max(100dvh,670px)}.phone-anchor{margin-top:142px}.topbar h1{font-size:18px}.utilities{gap:5px}.utility{font-size:10px;padding:8px 7px}.caption-panel p{font-size:11px}.caption-panel{margin-top:22px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+  .story{position:relative;z-index:12;max-width:560px;margin:8px auto 45px;padding:20px;background:#0b2029e8;border:1px solid #668c87;color:#e1e8df;box-shadow:0 15px 40px #0008}.story h2{font-size:19px;margin:0 0 10px}.story p{white-space:pre-line;font-size:13px;line-height:1.9;min-height:94px}.story button{padding:10px;margin:5px 6px 5px 0;background:#29454a;border:1px solid #77938f;color:#e1e8df;font-size:12px}.story small{color:#b6c2b7}@media(max-width:650px){.story{margin:0 14px 25px}} .scene{min-height:max(100dvh,990px)} 
+    .impact-flash{position:absolute;inset:0;pointer-events:none;z-index:18;background:radial-gradient(circle at 50% 42%,rgba(255,245,233,.96),rgba(255,243,226,.58) 18%,rgba(255,255,255,0) 55%);opacity:0;transition:opacity .12s ease}
+    .impact-flash.show{opacity:1}
+    .blood-overlay{position:absolute;inset:0;pointer-events:none;z-index:17;opacity:0;transition:opacity .45s ease}
+    .blood-overlay.show{opacity:1}
+    .blood-smear{position:absolute;background:linear-gradient(180deg,rgba(108,7,10,.96),rgba(126,14,16,.86) 40%,rgba(45,6,8,.18) 100%);box-shadow:0 0 18px rgba(74,0,4,.32)}
+    .blood-smear.one{width:120px;height:280px;right:13%;top:15%;border-radius:58% 42% 60% 30%/16% 18% 74% 62%;transform:rotate(12deg);filter:blur(.2px)}
+    .blood-smear.two{width:64px;height:210px;right:23%;top:21%;border-radius:45% 50% 60% 40%/20% 22% 78% 60%;transform:rotate(8deg)}
+    .blood-smear.three{width:22px;height:165px;right:18%;top:32%;border-radius:30px;transform:rotate(4deg)}
+    .blood-smear.four{width:150px;height:34px;right:8%;top:16%;border-radius:999px;transform:rotate(16deg);background:linear-gradient(90deg,rgba(97,6,10,.94),rgba(138,18,20,.68),rgba(54,6,8,0))}
+    .blood-drop{position:absolute;width:18px;height:72px;border-radius:45% 45% 60% 60%/18% 18% 82% 82%;background:linear-gradient(180deg,rgba(108,7,10,.95),rgba(71,0,0,.15));box-shadow:0 0 10px rgba(75,0,0,.26)}
+    .blood-drop.d1{right:16%;top:46%;transform:rotate(8deg)}
+    .blood-drop.d2{right:20%;top:50%;height:52px;width:12px;transform:rotate(4deg)}
+    .blood-drop.d3{right:26%;top:38%;height:46px;width:10px;transform:rotate(13deg)}
+    .scene.hit{animation:sceneHit .52s linear 1}
+    .scene.fall .phone-anchor,.scene.fall .caption-panel,.scene.fall .story{animation:sceneFall 1.6s ease-out forwards}
+    @keyframes sceneHit{0%{transform:translate(0,0)}10%{transform:translate(-12px,5px)}20%{transform:translate(16px,-9px)}30%{transform:translate(-15px,10px)}45%{transform:translate(11px,-6px)}65%{transform:translate(-7px,4px)}100%{transform:translate(0,0)}}
+    @keyframes sceneFall{0%{transform:none;filter:none}35%{transform:translate(-10px,8px) rotate(-1.2deg)}100%{transform:translate(-26px,26px) rotate(-2.8deg);filter:blur(.4px)}}
+
+  </style>
+</head>
+<body>
+  <div class="scene" id="scene">
+    <div class="outside" aria-hidden="true"><div class="lamp"></div><div class="neon"></div><div class="road"></div></div>
+    <div class="glass" aria-hidden="true"></div>
+    <div class="booth" aria-hidden="true"><div class="booth-sign"><span class="sign-logo">KT</span><strong>공중전화</strong><small>PUBLIC TELEPHONE</small></div></div>
+    <canvas id="rain" aria-hidden="true"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+    <header class="topbar">
+      <div><span class="eyebrow">A RAINY NIGHT · INTERACTIVE SCENE</span><h1>마지막 공중전화</h1></div>
+      <div class="utilities"><button type="button" class="utility" id="soundBtn" aria-pressed="true" aria-label="효과음 끄기">♪ 소리 켜짐</button><button type="button" class="utility" id="helpBtn" aria-label="사용 방법 열기">? 도움말</button></div>
+    </header>
+    <main class="phone-anchor" aria-label="공중전화 조작 화면">
+      <div class="phone">
+        <div class="wall-mount"></div>
+        <div class="device">
+          <span class="screw s1"></span><span class="screw s2"></span><span class="screw s3"></span><span class="screw s4"></span>
+          <div class="brandline"><div class="brandleft"><div class="kt">kt</div><span class="brandko">공중전화</span></div><div class="brandinfo">PUBLIC PHONE<br>LOCAL · COIN</div></div>
+          <div class="inside">
+            <div class="handset-bay">
+              <button type="button" class="handset" id="handset" aria-label="수화기 들기" aria-pressed="false" title="클릭해서 수화기 들기 / 내려놓기">
+                <span class="handle-bar"></span><span class="earpiece"></span><span class="mouthpiece"></span>
+              </button>
+              <svg class="cord" viewBox="0 0 110 125" aria-hidden="true"><path d="M62 1 C87 9,98 20,84 27 C60 39,25 21,20 37 C14 51,93 48,91 65 C89 84,19 59,17 80 C15 99,87 84,78 109 C75 119,67 120,59 125"/><path d="M62 1 C87 9,98 20,84 27 C60 39,25 21,20 37 C14 51,93 48,91 65 C89 84,19 59,17 80 C15 99,87 84,78 109 C75 119,67 120,59 125"/></svg>
+              <div class="action-hint">수화기 · CLICK</div>
+            </div>
+            <section class="faceplate" aria-label="전화기 조작부">
+              <div class="lcd-housing"><div class="lcd" role="status" aria-live="polite" aria-atomic="true"><div class="lcd-meta"><span id="lcdState">대기중</span><span id="lcdCredit">₩ 0</span></div><div class="lcd-number" id="lcdNumber">— — — — — —</div><div class="lcd-bottom" id="lcdMessage">수화기를 들어주세요</div></div></div>
+              <div class="coin-row"><div class="coin-unit"><small>동전 투입구 · COIN</small><span class="coin-slit"></span></div><button type="button" id="coinBtn" class="coin-btn" aria-label="100원 동전 투입">+ 100원<span>동전 넣기 ↗</span></button></div>
+              <div class="keyboard-shell"><div class="keypad" id="keypad" aria-label="공중전화 숫자 버튼">
+                <button class="key" data-key="1" aria-label="1번">1<small></small></button>
+                <button class="key missing" data-key="2" aria-label="2번 버튼이 빠진 자리" title="빠진 2번 키"></button>
+                <button class="key" data-key="3" aria-label="3번">3<small>DEF</small></button>
+                <button class="key" data-key="4" aria-label="4번">4<small>GHI</small></button>
+                <button class="key" data-key="5" aria-label="5번">5<small>JKL</small></button>
+                <button class="key missing" data-key="6" aria-label="6번 버튼이 빠진 자리" title="빠진 6번 키"></button>
+                <button class="key" data-key="7" aria-label="7번">7<small>PQRS</small></button>
+                <button class="key" data-key="8" aria-label="8번">8<small>TUV</small></button>
+                <button class="key missing" data-key="9" aria-label="9번 버튼이 빠진 자리" title="빠진 9번 키"></button>
+                <button class="key" data-key="*" aria-label="별표">*<small></small></button>
+                <button class="key" data-key="0" aria-label="0번">0<small></small></button>
+                <button class="key" data-key="#" aria-label="샵">#<small></small></button>
+              </div></div>
+              <div class="secondary-controls"><button type="button" class="small-btn" id="clearBtn" aria-label="한 자리 지우기">← 지우기</button><button type="button" class="small-btn end" id="endBtn">종료</button><button type="button" class="small-btn call" id="callBtn">☎ 통화</button></div>
+            </section>
+          </div>
+          <div class="bottom-hardware"><div class="return-slot"><span>동전<br>반환구</span><div class="return-hole"></div></div><button type="button" id="refundBtn" class="return-button">동전 반환 ↘</button></div>
+        </div>
+        <div class="warning" aria-hidden="true">일부 번호 버튼이<br>뜯겨 나갔습니다.<br>무리하게 누르지 마시오.</div>
+      </div>
+    </main>
+    <div class="caption-panel"><p><span class="step">① 수화기를 들고</span> · <span class="step">② 동전을 넣은 뒤</span> · <span class="step">③ 번호를 눌러보세요</span></p><span class="status-note" id="narration" aria-live="polite">부스 유리창을 빗방울이 천천히 타고 흐른다.</span></div>
+    <section class="story"><h2 id="storyTitle">01 · 빗속의 전화</h2><p id="storyBody">류인혁은 조직의 은신처를 발견했다. 그러나 휴대전화의 배터리는 꺼져 있었다.
+
+공중전화 박스 안, 번호 버튼 세 개가 뜯겨 나가 있었다. 먼저 동료에게 연락해야 한다.</p><div id="storyActions"><button id="colleagueHint">동료 연락처를 확인한다</button><button id="hyeonseoHint">현서 연락처를 확인한다</button></div><button id="restart">↺ 처음부터 다시</button><div><small>가상의 번호를 사용하는 픽션 체험입니다. 실제 전화는 연결되지 않습니다.</small></div></section><div class="credit">RYU IN-HYEOK / THE LAST CALL / 2000s</div>
+  </div>
+
+  <div class="impact-flash" id="impactFlash" aria-hidden="true"></div>
+  <div class="blood-overlay" id="bloodOverlay" aria-hidden="true"><div class="blood-smear one"></div><div class="blood-smear two"></div><div class="blood-smear three"></div><div class="blood-smear four"></div><div class="blood-drop d1"></div><div class="blood-drop d2"></div><div class="blood-drop d3"></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="overlay" id="helpOverlay" hidden role="dialog" aria-modal="true" aria-labelledby="helpTitle"><div class="modal"><span class="eyebrow">OPERATION GUIDE / 사용 방법</span><h2 id="helpTitle">부스 안에서</h2><p>실제 전화가 걸리지는 않는, 클릭으로 체험하는 공중전화 장면입니다. 숫자 버튼이 몇 개 없어졌습니다.</p><ol><li>왼쪽의 검은 <strong>수화기</strong>를 누릅니다.</li><li><strong>+100원</strong>을 눌러 동전을 투입합니다.</li><li>숫자 버튼으로 번호를 입력하고 <strong>통화</strong>를 누릅니다.</li><li>빠진 숫자 자리도 눌러보세요.</li></ol><p>키보드: <kbd>0~9</kbd> <kbd>*</kbd> <kbd>#</kbd> 입력 · <kbd>Backspace</kbd> 삭제 · <kbd>Enter</kbd> 통화 · <kbd>Esc</kbd> 수화기 내려놓기 · <kbd>H</kbd> 수화기 · <kbd>C</kbd> 동전</p><button id="closeHelp" type="button">부스로 돌아가기</button></div></div>
+  <script>
+    (()=>{
+      'use strict';
+      const $=id=>document.getElementById(id);
+      const missing=new Set(['2','6','9']);
+      const keys=[...document.querySelectorAll('.key')];
+      const state={lifted:false,credit:0,digits:'',calling:false,sound:true,attempt:0,phase:'colleague',ended:false};
+      const timers=[];
+      const COLLEAGUE='01026394518', HYEONSEO='01034357871';
+      function story(title,body){$('storyTitle').textContent=title;$('storyBody').textContent=body}
+      function choiceEnd(){const area=$('storyActions');area.innerHTML='';[['위치를 알려준다','“항구 쪽이야. 창고가 있는 곳. 바로 경찰서에 알려. 혼자 오지 말고.”'],['괜찮다고 안심시킨다','“나 괜찮아. 현서야, 내 말 잘 들어. 지금부터 내가 하는 말 기억해.”']].forEach(([label,speech])=>{let b=document.createElement('button');b.textContent=label;b.onclick=()=>triggerAttack(speech);area.append(b)})}
+      let audio=null,toastTimeout=null,callTimeout=null;
+      const messages=[
+        '밖에서는 빗소리만 들려온다.',
+        '수화기 너머로 낮은 잡음이 흐른다.',
+        '기억 속 번호를 하나씩 떠올린다.',
+        '손끝에 차가운 금속의 감촉이 남는다.'
+      ];
+      
+      function clearStoryTimers(){while(timers.length)clearTimeout(timers.pop())}
+      function schedule(fn,ms){const id=setTimeout(fn,ms);timers.push(id);return id}
+      function resetEffects(){const scene=document.querySelector('.scene');scene.classList.remove('hit','fall');$('impactFlash').classList.remove('show');$('bloodOverlay').classList.remove('show')}
+      function impactSound(){beep(118,.12,'square',.042);setTimeout(()=>beep(86,.26,'sawtooth',.028),28);setTimeout(()=>noise(.55,.028),55)}
+      function triggerAttack(speech){const area=$('storyActions');area.textContent='통화가 이어지는 동안 바깥에서 차가 멈춰 선다…';clearStoryTimers();story('04 · 부스 앞의 불빛',speech+'\n\n현서가 숨을 삼키듯 조용해졌다. 그러다 다급한 목소리로 다시 물었다.\n\n“아저씨, 지금 거기 어디예요? 주변에 누구 있어요?”\n\n그 순간, 부스 유리 너머로 헤드라이트가 번졌다. 인혁은 본능적으로 고개를 돌렸다.');narrate('부스 밖, 빗물 위로 헤드라이트가 길게 번진다.');render('통화 중…');schedule(()=>{render('불길한 인기척');narrate('문 바깥에서 젖은 발소리가 한 걸음 가까워진다.');toast('누군가 부스 앞으로 다가옵니다.');},1600);schedule(()=>{document.querySelector('.scene').classList.add('hit');$('impactFlash').classList.add('show');impactSound();render('충격');narrate('금속 파이프가 머리를 세게 후려치는 순간, 시야가 번쩍 뒤집힌다.');story('05 · 내려친 파이프','현서가 다시 이름을 부르는 순간이었다.\n\n젖은 문이 벌컥 열리고, 누군가 휘두른 금속 파이프가 인혁의 머리를 거칠게 후려쳤다. 둔탁한 충격이 관자놀이와 뒤통수를 울리듯 파고들었다.\n\n시야가 새하얗게 번쩍인 뒤 곧 붉게 번졌다. 이마를 타고 뜨거운 피가 흘러내려 한쪽 눈가를 적셨고, 수화기를 쥔 손끝이 순간 힘을 잃었다.');toast('파이프에 맞았습니다.');},3200);schedule(()=>{$('impactFlash').classList.remove('show');$('bloodOverlay').classList.add('show');document.querySelector('.scene').classList.remove('hit');document.querySelector('.scene').classList.add('fall');render('시야가 흔들린다');narrate('피가 눈가를 타고 흘러내려 유리창 불빛이 번져 보인다.');},3550);schedule(()=>{state.calling=false;state.ended=true;state.lifted=false;state.digits='';render('통화 단절');story('06 · 끊어진 통화','수화기가 손에서 미끄러져 축축한 바닥으로 부딪혔다.\n\n수화기 너머로는 현서의 다급한 목소리가 작게 터져 나왔다. “아저씨? 아저씨, 왜 그래요? 아저씨!”\n\n하지만 인혁의 대답은 이어지지 못했다. 빗물과 피가 뒤섞여 시야를 흐렸고, 통화는 거친 잡음만 남긴 채 끊어졌다.\n\n그날 저녁의 약속은 끝내 지켜지지 못했다.');area.textContent='피습 장면까지 재생되었습니다. 다른 선택을 보려면 처음부터 다시 시작하세요.';narrate('끊어진 수화기 너머로 현서의 목소리가 멀어지고, 빗소리만 남는다.');noise(.72,.022);toast('통화가 강제로 끊겼습니다.');},5200)}
+function getAudio(){if(!state.sound)return null;try{if(!audio)audio=new (window.AudioContext||window.webkitAudioContext)();if(audio.state==='suspended')audio.resume();return audio;}catch(e){return null}}
+      function beep(freq=500,duration=.08,type='sine',volume=.04){const ctx=getAudio();if(!ctx)return;let o=ctx.createOscillator(),g=ctx.createGain();o.type=type;o.frequency.value=freq;g.gain.setValueAtTime(volume,ctx.currentTime);g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+duration);o.connect(g).connect(ctx.destination);o.start();o.stop(ctx.currentTime+duration)}
+      function dual(key){const tones={'1':[697,1209],'2':[697,1336],'3':[697,1477],'4':[770,1209],'5':[770,1336],'6':[770,1477],'7':[852,1209],'8':[852,1336],'9':[852,1477],'*':[941,1209],'0':[941,1336],'#':[941,1477]};const t=tones[key];if(t){beep(t[0],.14,'sine',.027);beep(t[1],.14,'sine',.021)}}
+      function noise(duration=.5,volume=.018){let ctx=getAudio();if(!ctx)return;let buffer=ctx.createBuffer(1,Math.ceil(ctx.sampleRate*duration),ctx.sampleRate),x=buffer.getChannelData(0);for(let i=0;i<x.length;i++)x[i]=(Math.random()*2-1)*(.3+.7*(1-i/x.length));let src=ctx.createBufferSource(),g=ctx.createGain(),f=ctx.createBiquadFilter();f.type='lowpass';f.frequency.value=1800;src.buffer=buffer;g.gain.value=volume;src.connect(f).connect(g).connect(ctx.destination);src.start()}
+      function toast(text){const t=$('toast');t.textContent=text;t.classList.add('show');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>t.classList.remove('show'),2400)}
+      function narrate(text){$('narration').textContent=text}
+      function formatted(d){if(!d)return '— — — — — —';if(d.length<=3)return d;if(d.length<=7)return d.slice(0,3)+'-'+d.slice(3);return d.slice(0,3)+'-'+d.slice(3,7)+'-'+d.slice(7)}
+      function render(message){$('lcdCredit').textContent='₩ '+state.credit;$('lcdNumber').textContent=formatted(state.digits);$('handset').classList.toggle('lifted',state.lifted);$('handset').setAttribute('aria-pressed',String(state.lifted));$('handset').setAttribute('aria-label',state.lifted?'수화기 내려놓기':'수화기 들기');$('lcdState').textContent=state.calling?'발신 중':state.lifted?'통화 준비':'대기중';$('lcdMessage').textContent=message||(state.calling?'연결을 시도합니다…':!state.lifted?'수화기를 들어주세요':state.credit<=0?'동전을 넣어주세요':'전화번호를 누르세요')}
+      function hangup(){if(state.ended)return toast('이야기가 끝났습니다. 처음부터 다시 시작해 주세요.');if(!state.lifted&&!state.calling){toast('수화기가 제자리에 있습니다.');return}clearTimeout(callTimeout);clearStoryTimers();state.calling=false;state.lifted=false;state.digits='';beep(250,.12,'triangle',.05);render();narrate('딸깍. 수화기가 제자리로 돌아왔다.');toast('통화 종료 · 남은 동전은 반환할 수 있습니다.')}
+      function handset(){if(state.ended)return toast('이야기가 끝났습니다. 처음부터 다시 시작해 주세요.');if(state.lifted){hangup();return}state.lifted=true;beep(350,.16,'sine',.025);setTimeout(()=>beep(440,.22,'sine',.017),60);render();narrate('묵직한 수화기를 들어 귀에 댔다. 신호음이 희미하게 들린다.');toast('수화기를 들었습니다.')}
+      function coin(){if(state.ended)return toast('이야기가 끝났습니다.');if(state.calling)return toast('통화가 끝난 뒤 동전을 넣어주세요.');if(state.credit>=900)return toast('더 이상 동전을 넣을 수 없습니다.');state.credit+=100;beep(900,.045,'square',.012);setTimeout(()=>beep(480,.075,'triangle',.033),95);render();narrate('동전이 기계 속으로 떨어지는 짤그랑 소리가 울렸다.');toast('100원 투입 · 잔액 '+state.credit+'원')}
+      function pressKey(key){if(state.ended)return toast('처음부터 다시 시작해 주세요.');if(missing.has(key)){beep(145,.045,'triangle',.018);render('버튼이 빠져 있습니다');narrate('숫자 '+key+'가 있어야 할 자리에는 차가운 빈 구멍뿐이다.');if(state.phase==='colleague'){state.phase='hyeonseo';$('hyeonseoHint').textContent='현서의 번호를 떠올린다';story('02 · 떠오른 번호','동료의 번호에 필요한 숫자가 없다. 몇 번을 눌러도 차가운 구멍뿐이다.\n\n그때 문득, 외우려고 하지 않아도 기억나는 번호 하나가 떠올랐다. 현서.\n\n지우기 버튼을 눌러 번호를 정리하고 현서에게 전화를 걸어야 한다.');}toast(key+'번 버튼이 뜯겨 나가 눌리지 않습니다.');return}
+        const button=keys.find(b=>b.dataset.key===key);if(button){button.classList.add('pressed');setTimeout(()=>button.classList.remove('pressed'),150)}
+        if(state.calling)return toast('연결을 시도하는 중입니다.');
+        if(!state.lifted){beep(170,.05);render('수화기를 먼저 드세요');return toast('먼저 수화기를 들어주세요.')}
+        if(state.credit<=0){beep(170,.055);render('동전이 필요합니다');return toast('동전을 투입해야 번호를 누를 수 있습니다.')}
+        if(state.digits.length>=11){beep(170,.045);return toast('입력 가능한 번호를 초과했습니다.')}
+        state.digits+=key;dual(key);render();narrate(messages[Math.min(3,Math.floor(state.digits.length/3))]);
+      }
+      function clearOne(){if(state.ended)return;if(state.calling)return;const old=state.digits;state.digits=state.digits.slice(0,-1);beep(400,.06,'triangle',.023);render();if(!old)toast('지울 번호가 없습니다.')}
+      function call(){if(state.calling||state.ended)return;if(!state.lifted)return toast('수화기를 먼저 들어주세요.');if(state.credit<=0)return toast('동전이 부족합니다.');if(state.digits.length<4)return toast('번호를 더 입력하세요.');
+        state.calling=true;state.credit=Math.max(0,state.credit-100);render('연결 중…');beep(440,.3,'sine',.02);
+        if(state.digits===HYEONSEO&&state.phase==='hyeonseo'){story('03 · 현서에게','뚜르르. 뚜르르.\n\n인혁은 축축한 유리창 너머를 바라보았다. 제발 전화를 받기를.');callTimeout=setTimeout(()=>{if(!state.calling)return;render('통화 연결');narrate('“여보세요? …아저씨?”');story('03 · 현서의 목소리','“여보세요? …아저씨?”\n\n현서였다.\n\n“이 번호 뭐예요? 어디예요?”\n\n“현서야.”\n\n그는 잠시 말을 골랐다.\n\n오늘 저녁엔 같이 밥을 먹기로 했었는데. 결국 약속을 지키지 못할 것 같았다.');choiceEnd()},2400);return}
+        callTimeout=setTimeout(()=>{state.calling=false;render('연결 실패');noise(.4,.03);toast('번호가 연결되지 않습니다.');story('01 · 닿지 않는 번호','번호가 온전하지 않다. 인혁은 다시 키패드를 내려다보았다.\n\n뜯겨 나간 버튼들. 동료에게 연락할 방법이 없다.')},1800)
+      }
+      function refund(){if(state.ended)return toast('이야기가 끝났습니다.');if(state.calling)return toast('통화 중에는 반환할 수 없습니다.');if(!state.credit)return toast('반환할 동전이 없습니다.');const amount=state.credit;state.credit=0;beep(700,.065,'triangle',.027);setTimeout(()=>beep(480,.12,'triangle',.031),100);render();narrate('반환구 안에서 동전이 달그락 소리를 냈다.');toast(amount+'원 반환')}
+      $('colleagueHint').onclick=()=>{toast('동료: '+COLLEAGUE+' (빠진 버튼이 필요함)');narrate('인혁은 수첩에 적어둔 동료의 번호를 확인한다.')} ;$('hyeonseoHint').onclick=()=>{if(state.phase!=='hyeonseo')return toast('우선 동료에게 연락을 시도해야 합니다.');toast('현서: '+HYEONSEO);narrate('수없이 걸었던 번호. 현서의 번호만은 정확히 기억하고 있다.');};
+      $('restart').onclick=()=>{clearTimeout(callTimeout);clearStoryTimers();resetEffects();Object.assign(state,{lifted:false,credit:0,digits:'',calling:false,phase:'colleague',ended:false});story('01 · 빗속의 전화','류인혁은 조직의 은신처를 발견했다. 그러나 휴대전화의 배터리는 꺼져 있었다.\n\n공중전화 박스 안, 번호 버튼 세 개가 뜯겨 나가 있었다. 먼저 동료에게 연락해야 한다.');$('storyActions').innerHTML='<button id="colleagueHint">동료 연락처를 확인한다</button><button id="hyeonseoHint">현서의 번호를 떠올린다</button>';$('colleagueHint').onclick=()=>toast('동료: '+COLLEAGUE+' (빠진 버튼이 필요함)');$('hyeonseoHint').onclick=()=>state.phase==='hyeonseo'?toast('현서: '+HYEONSEO):toast('우선 동료에게 연락을 시도해야 합니다.');narrate('유리창에 빗줄기가 흐른다. 멀리 항구의 불빛이 희미하다.');render()};
+      $('handset').addEventListener('click',handset);$('coinBtn').addEventListener('click',coin);$('clearBtn').addEventListener('click',clearOne);$('callBtn').addEventListener('click',call);$('endBtn').addEventListener('click',hangup);$('refundBtn').addEventListener('click',refund);
+      keys.forEach(b=>b.addEventListener('click',()=>pressKey(b.dataset.key)));
+      $('soundBtn').addEventListener('click',()=>{state.sound=!state.sound;const el=$('soundBtn');el.setAttribute('aria-pressed',String(state.sound));el.setAttribute('aria-label',state.sound?'효과음 끄기':'효과음 켜기');el.textContent=state.sound?'♪ 소리 켜짐':'♪ 소리 꺼짐';if(state.sound)beep(700,.08)});
+      const overlay=$('helpOverlay');let lastFocus=null;
+      function showHelp(){lastFocus=document.activeElement;overlay.hidden=false;$('closeHelp').focus()}
+      function hideHelp(){overlay.hidden=true;lastFocus?.focus()}
+      $('helpBtn').addEventListener('click',showHelp);$('closeHelp').addEventListener('click',hideHelp);overlay.addEventListener('click',e=>{if(e.target===overlay)hideHelp()});
+      document.addEventListener('keydown',e=>{if(!overlay.hidden){if(e.key==='Escape')hideHelp();return}if(e.altKey||e.ctrlKey||e.metaKey)return;if(e.target instanceof HTMLButtonElement&&e.key==='Enter')return;
+        if(/^[0-9*#]$/.test(e.key)){e.preventDefault();pressKey(e.key)}else if(e.key==='Backspace'){e.preventDefault();clearOne()}else if(e.key==='Enter'){e.preventDefault();call()}else if(e.key==='Escape'){e.preventDefault();hangup()}else if(e.key.toLowerCase()==='h'){e.preventDefault();handset()}else if(e.key.toLowerCase()==='c'){e.preventDefault();coin()}
+      });
+      // Ambient rain over the street-facing glass; entirely local and offline.
+      const canvas=$('rain'),ctx=canvas.getContext('2d');let drops=[],cw=0,ch=0,tick=0;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function resize(){const dpr=Math.min(devicePixelRatio||1,1.5);cw=innerWidth;ch=document.querySelector('.scene').offsetHeight;canvas.width=Math.round(cw*dpr);canvas.height=Math.round(ch*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);drops=Array.from({length:Math.min(110,Math.floor(cw/9))},()=>({x:Math.random()*cw,y:Math.random()*ch,s:2+Math.random()*8,v:1.2+Math.random()*2.5,a:.04+Math.random()*.2}));draw()}
+      function draw(){ctx.clearRect(0,0,cw,ch);for(let d of drops){ctx.strokeStyle='rgba(202,233,224,'+d.a+')';ctx.lineWidth=.65;ctx.beginPath();ctx.moveTo(d.x,d.y);ctx.lineTo(d.x-.7,d.y+d.s);ctx.stroke();if(!reduced){d.y+=d.v;if(d.y>ch){d.y=-15;d.x=Math.random()*cw}}}}
+      function animate(){if(reduced)return;if((tick++%2)===0)draw();requestAnimationFrame(animate)}
+      window.addEventListener('resize',resize);resize();if(!reduced)requestAnimationFrame(animate);
+      resetEffects();
+      render();
+    })();
+  </script>
+</body>
+</html>
