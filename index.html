@@ -30,10 +30,10 @@
     .topbar{position:absolute;z-index:7;top:99px;left:max(30px,calc(50% - 455px));right:max(30px,calc(50% - 455px));display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
     .eyebrow{display:block;font-size:10px;letter-spacing:3px;color:#9eafa8;text-transform:uppercase}.topbar h1{font-family:Georgia,'Malgun Gothic',serif;font-size:24px;font-weight:500;letter-spacing:1px;margin:7px 0 0;color:#e7ebdd;text-shadow:0 2px 9px #000}
     .utilities{display:flex;gap:9px;align-items:center}.utility{border:1px solid #a5c5b04c;background:#0719228f;color:#e3e8dc;border-radius:2px;padding:9px 13px;font-size:11px;letter-spacing:.7px;transition:background .2s}.utility:hover{background:#33535a}.utility[aria-pressed=true]{border-color:#d8cf9566;color:#ebdc9b}
-    .phone-anchor{position:relative;z-index:4;width:calc(490px * var(--phone-scale));height:calc(636px * var(--phone-scale));margin:177px auto 0;filter:drop-shadow(16px 26px 27px #000a)}
-    .phone{position:absolute;left:0;top:0;transform:scale(var(--phone-scale));transform-origin:top left;width:490px;height:636px;user-select:none;-webkit-user-select:none}
+    .phone-anchor{position:relative;z-index:4;width:calc(490px * var(--phone-scale));height:calc(710px * var(--phone-scale));margin:177px auto 0;filter:drop-shadow(16px 26px 27px #000a)}
+    .phone{position:absolute;left:0;top:0;transform:scale(var(--phone-scale));transform-origin:top left;width:490px;height:710px;user-select:none;-webkit-user-select:none}
     .wall-mount{position:absolute;inset:7px 14px 6px;background:linear-gradient(120deg,#2f484c,#142f36 38%,#21343a 70%,#0f252e);border:3px solid #132930;box-shadow:inset 0 0 20px #0008,8px 14px 0 -4px #08161ba6,18px 20px 35px #0009;border-radius:12px 12px 18px 18px}
-    .device{position:absolute;left:24px;top:0;width:442px;height:615px;border-radius:23px 23px 19px 19px;box-shadow:inset 0 0 0 3px #132e32,inset 4px 5px 10px #ddf2d43d,inset -9px -8px 17px #0b212eb8,2px 7px 1px #07181d,7px 20px 18px #000b;background:linear-gradient(101deg,#3a6666 0%,#6c9890 9%,#577e79 24%,#466f70 40%,#31575b 83%,#2c5257 100%);border:3px solid #1a3e43}
+    .device{position:absolute;left:24px;top:0;width:442px;height:682px;border-radius:23px 23px 19px 19px;box-shadow:inset 0 0 0 3px #132e32,inset 4px 5px 10px #ddf2d43d,inset -9px -8px 17px #0b212eb8,2px 7px 1px #07181d,7px 20px 18px #000b;background:linear-gradient(101deg,#3a6666 0%,#6c9890 9%,#577e79 24%,#466f70 40%,#31575b 83%,#2c5257 100%);border:3px solid #1a3e43}
     .device:before{content:"";position:absolute;inset:8px 10px auto;height:2px;background:#b2d2b442;filter:blur(1px)}
     .device:after{content:"";position:absolute;inset:0;border-radius:20px;pointer-events:none;background:repeating-linear-gradient(96deg,transparent 0 9px,#e8f1cc08 9px 10px,transparent 10px 18px),linear-gradient(120deg,#fff1,transparent 38%);mix-blend-mode:screen;opacity:.45}
     .screw{position:absolute;width:11px;height:11px;background:radial-gradient(circle at 38% 36%,#f2e9bb,#738780 46%,#233d41 70%);border:1px solid #27484b;border-radius:100%;box-shadow:1px 1px 2px #152f30;z-index:2}.screw:after{content:"";position:absolute;width:6px;height:1px;background:#395357;left:2px;top:4px;transform:rotate(25deg)}.s1{top:17px;left:19px}.s2{top:17px;right:17px}.s3{bottom:17px;left:19px}.s4{bottom:17px;right:17px}
@@ -59,9 +59,9 @@
     .coin-unit{position:relative;border:2px solid #718986;border-radius:5px;background:linear-gradient(130deg,#5d7775,#bdc9bd 30%,#6c8e8a);box-shadow:inset 2px 2px 5px #223a3b75,1px 1px #eff6db66;padding:8px;text-align:center}
     .coin-unit small{display:block;color:#203e43;font-weight:800;font-size:10px;letter-spacing:.3px;margin-bottom:7px}.coin-slit{display:block;height:8px;border-radius:10px;border:2px solid #344c4c;background:linear-gradient(#051820,#263e41 60%,#132a30);box-shadow:1px 2px 1px #cce0c385,inset 0 1px 3px #010b11;width:76px;margin:auto}
     .coin-btn{border:2px solid #917850;border-radius:5px;background:linear-gradient(160deg,#ddcf9a,#ae9463 55%,#9e8256);box-shadow:inset 1px 2px 1px #fff6,2px 3px 3px #1b343b60;color:#342f20;font-weight:800;font-size:12px;line-height:1.25;transition:transform .1s,filter .2s}.coin-btn:hover{filter:brightness(1.1)}.coin-btn:active{transform:translateY(2px)}.coin-btn span{display:block;font:10px/1.4 monospace;font-weight:400}
-    .keyboard-shell{background:linear-gradient(120deg,#607b79,#7f9892 24%,#64817f 82%);border:2px solid #66817e;border-top-color:#385a5b;border-left-color:#355b5f;border-radius:9px;box-shadow:inset 3px 3px 7px #25474b88,1px 2px #dbe7ce9a;padding:11px 9px 10px;flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
-    .keypad{display:grid;grid-template-columns:repeat(3,67px);grid-template-rows:repeat(4,49px);column-gap:10px;row-gap:9px}
-    .key{width:67px;height:49px;position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0;color:#24383a;font-family:Arial,sans-serif;font-size:24px;font-weight:700;line-height:1;border:2px solid #627779;border-radius:7px;background:linear-gradient(152deg,#f1f0df,#d5dacb 38%,#a1aea7 100%);text-shadow:0 1px #fff;box-shadow:inset 2px 2px 2px #fff7,inset -3px -3px 4px #657b7891,0 3px 0 #384f53,1px 5px 4px #162f3c61;transition:filter .12s,transform .09s,box-shadow .09s}
+    .keyboard-shell{background:linear-gradient(120deg,#607b79,#7f9892 24%,#64817f 82%);border:2px solid #66817e;border-top-color:#385a5b;border-left-color:#355b5f;border-radius:9px;box-shadow:inset 3px 3px 7px #25474b88,1px 2px #dbe7ce9a;padding:11px 10px 12px;min-width:0;overflow:visible;flex:1;min-height:249px;display:flex;align-items:center;justify-content:center}
+    .keypad{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(4,49px);column-gap:7px;row-gap:9px;width:100%;max-width:224px}
+    .key{width:100%;min-width:0;height:49px;position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0;color:#24383a;font-family:Arial,sans-serif;font-size:24px;font-weight:700;line-height:1;border:2px solid #627779;border-radius:7px;background:linear-gradient(152deg,#f1f0df,#d5dacb 38%,#a1aea7 100%);text-shadow:0 1px #fff;box-shadow:inset 2px 2px 2px #fff7,inset -3px -3px 4px #657b7891,0 3px 0 #384f53,1px 5px 4px #162f3c61;transition:filter .12s,transform .09s,box-shadow .09s}
     .key small{font:6px/1.8 Arial,sans-serif;letter-spacing:1px;color:#657472;text-shadow:none}.key:not(.missing):hover{filter:brightness(1.08)}.key:not(.missing):active,.key.pressed{transform:translateY(3px);box-shadow:inset 2px 2px 4px #6c7b7c85,0 0 0 #384f53;filter:brightness(.85)}
     .key.missing{background:linear-gradient(130deg,#294c50,#526e6b 35%,#294447);box-shadow:inset 3px 4px 6px #071e2699,0 1px 1px #d1ddca91;border:2px solid #395b5c;color:transparent;text-shadow:none}
     .key.missing:before,.key.missing:after{content:"";position:absolute;border-radius:50%;width:6px;height:6px;background:radial-gradient(circle,#0e272c 1px,#789390 2px,#213f44 3px);top:9px}.key.missing:before{left:10px}.key.missing:after{right:10px}.key.missing:hover{filter:brightness(1.17)}.key.missing:active{transform:scale(.98)}
@@ -76,7 +76,7 @@
     @media(max-width:650px){:root{--phone-scale:.79}.scene{min-height:max(100dvh,730px)}.booth{border-inline-width:13px}.booth-sign{height:62px;left:-13px;right:-13px;gap:10px}.booth-sign strong{font-size:21px;letter-spacing:7px}.booth-sign small{display:none}.booth:before{top:60px;left:-13px;right:-13px}.topbar{left:19px;right:19px;top:86px}.topbar h1{font-size:19px}.eyebrow{font-size:9px;letter-spacing:1.5px}.utility{padding:9px 10px}.phone-anchor{margin-top:146px}.caption-panel{margin-top:17px}.credit{display:none}.warning{display:none}}
     @media(max-width:400px){:root{--phone-scale:.69}.scene{min-height:max(100dvh,670px)}.phone-anchor{margin-top:142px}.topbar h1{font-size:18px}.utilities{gap:5px}.utility{font-size:10px;padding:8px 7px}.caption-panel p{font-size:11px}.caption-panel{margin-top:22px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
-  .story{position:relative;z-index:12;max-width:560px;margin:8px auto 45px;padding:20px;background:#0b2029e8;border:1px solid #668c87;color:#e1e8df;box-shadow:0 15px 40px #0008}.story h2{font-size:19px;margin:0 0 10px}.story p{white-space:pre-line;font-size:13px;line-height:1.9;min-height:94px}.story button{padding:10px;margin:5px 6px 5px 0;background:#29454a;border:1px solid #77938f;color:#e1e8df;font-size:12px}.story small{color:#b6c2b7}@media(max-width:650px){.story{margin:0 14px 25px}} .scene{min-height:max(100dvh,990px)} 
+  .story{position:relative;z-index:12;max-width:560px;margin:8px auto 45px;padding:20px;background:#0b2029e8;border:1px solid #668c87;color:#e1e8df;box-shadow:0 15px 40px #0008}.story h2{font-size:19px;margin:0 0 10px}.story p{white-space:pre-line;font-size:13px;line-height:1.9;min-height:94px}.story button{padding:10px;margin:5px 6px 5px 0;background:#29454a;border:1px solid #77938f;color:#e1e8df;font-size:12px}.story small{color:#b6c2b7}@media(max-width:650px){.story{margin:0 14px 25px}} .scene{min-height:max(100dvh,1090px)} 
     .impact-flash{position:absolute;inset:0;pointer-events:none;z-index:18;background:radial-gradient(circle at 50% 42%,rgba(255,245,233,.96),rgba(255,243,226,.58) 18%,rgba(255,255,255,0) 55%);opacity:0;transition:opacity .12s ease}
     .impact-flash.show{opacity:1}
     .blood-overlay{position:absolute;inset:0;pointer-events:none;z-index:17;opacity:0;transition:opacity .45s ease}
@@ -95,7 +95,8 @@
     @keyframes sceneHit{0%{transform:translate(0,0)}10%{transform:translate(-12px,5px)}20%{transform:translate(16px,-9px)}30%{transform:translate(-15px,10px)}45%{transform:translate(11px,-6px)}65%{transform:translate(-7px,4px)}100%{transform:translate(0,0)}}
     @keyframes sceneFall{0%{transform:none;filter:none}35%{transform:translate(-10px,8px) rotate(-1.2deg)}100%{transform:translate(-26px,26px) rotate(-2.8deg);filter:blur(.4px)}}
 
-  </style>
+  .scene-next{background:#d2c19a!important;color:#18232a!important;font-weight:700!important;border:1px solid #f3dfa8!important;animation:hintPulse 2.2s ease-in-out infinite}@keyframes hintPulse{50%{opacity:.72}}
+      </style>
 </head>
 <body>
   <div class="scene" id="scene">
@@ -168,7 +169,7 @@
       const COLLEAGUE='01026394518', HYEONSEO='01034357871';
       function story(title,body){$('storyTitle').textContent=title;$('storyBody').textContent=body}
       function choiceEnd(){const area=$('storyActions');area.innerHTML='';[['위치를 알려준다','“항구 쪽이야. 창고가 있는 곳. 바로 경찰서에 알려. 혼자 오지 말고.”'],['괜찮다고 안심시킨다','“나 괜찮아. 현서야, 내 말 잘 들어. 지금부터 내가 하는 말 기억해.”']].forEach(([label,speech])=>{let b=document.createElement('button');b.textContent=label;b.onclick=()=>triggerAttack(speech);area.append(b)})}
-      let audio=null,toastTimeout=null,callTimeout=null;
+      let audio=null,toastTimeout=null,callTimeout=null,rainSource=null,rainGain=null;
       const messages=[
         '밖에서는 빗소리만 들려온다.',
         '수화기 너머로 낮은 잡음이 흐른다.',
@@ -179,9 +180,100 @@
       function clearStoryTimers(){while(timers.length)clearTimeout(timers.pop())}
       function schedule(fn,ms){const id=setTimeout(fn,ms);timers.push(id);return id}
       function resetEffects(){const scene=document.querySelector('.scene');scene.classList.remove('hit','fall');$('impactFlash').classList.remove('show');$('bloodOverlay').classList.remove('show')}
+      let lineTone=null, lineGain=null, lineMode='off';
+      function stopPhoneLine(){
+        lineMode='off';
+        if(lineGain && audio){const t=audio.currentTime;lineGain.gain.cancelScheduledValues(t);lineGain.gain.setTargetAtTime(0,t,.035)}
+        if(lineTone){try{lineTone.stop(audio.currentTime+.18)}catch(e){}lineTone=null;lineGain=null}
+      }
+      function startPhoneLine(mode){
+        if(lineMode===mode&&lineTone)return;
+        stopPhoneLine();lineMode=mode;
+        if(!state.sound)return;
+        const ctx=getAudio();if(!ctx)return;
+        // Low-volume, filtered analog telephone connection tone.
+        const osc=ctx.createOscillator(),gain=ctx.createGain(),filter=ctx.createBiquadFilter();
+        osc.type='sine';osc.frequency.value=mode==='ring'?425:235;
+        filter.type='lowpass';filter.frequency.value=mode==='ring'?700:360;
+        gain.gain.value=0;
+        osc.connect(filter).connect(gain).connect(ctx.destination);
+        osc.start();lineTone=osc;lineGain=gain;
+        if(mode==='ring'){
+          const t=ctx.currentTime;
+          for(let i=0;i<50;i++){const start=t+i*4;gain.gain.setValueAtTime(0,start);gain.gain.linearRampToValueAtTime(.012,start+.025);gain.gain.setValueAtTime(.012,start+1);gain.gain.linearRampToValueAtTime(0,start+1.06)}
+        } else gain.gain.setTargetAtTime(.0018,ctx.currentTime,.055);
+      }
       function impactSound(){beep(118,.12,'square',.042);setTimeout(()=>beep(86,.26,'sawtooth',.028),28);setTimeout(()=>noise(.55,.028),55)}
-      function triggerAttack(speech){const area=$('storyActions');area.textContent='통화가 이어지는 동안 바깥에서 차가 멈춰 선다…';clearStoryTimers();story('04 · 부스 앞의 불빛',speech+'\n\n현서가 숨을 삼키듯 조용해졌다. 그러다 다급한 목소리로 다시 물었다.\n\n“아저씨, 지금 거기 어디예요? 주변에 누구 있어요?”\n\n그 순간, 부스 유리 너머로 헤드라이트가 번졌다. 인혁은 본능적으로 고개를 돌렸다.');narrate('부스 밖, 빗물 위로 헤드라이트가 길게 번진다.');render('통화 중…');schedule(()=>{render('불길한 인기척');narrate('문 바깥에서 젖은 발소리가 한 걸음 가까워진다.');toast('누군가 부스 앞으로 다가옵니다.');},1600);schedule(()=>{document.querySelector('.scene').classList.add('hit');$('impactFlash').classList.add('show');impactSound();render('충격');narrate('금속 파이프가 머리를 세게 후려치는 순간, 시야가 번쩍 뒤집힌다.');story('05 · 내려친 파이프','현서가 다시 이름을 부르는 순간이었다.\n\n젖은 문이 벌컥 열리고, 누군가 휘두른 금속 파이프가 인혁의 머리를 거칠게 후려쳤다. 둔탁한 충격이 관자놀이와 뒤통수를 울리듯 파고들었다.\n\n시야가 새하얗게 번쩍인 뒤 곧 붉게 번졌다. 이마를 타고 뜨거운 피가 흘러내려 한쪽 눈가를 적셨고, 수화기를 쥔 손끝이 순간 힘을 잃었다.');toast('파이프에 맞았습니다.');},3200);schedule(()=>{$('impactFlash').classList.remove('show');$('bloodOverlay').classList.add('show');document.querySelector('.scene').classList.remove('hit');document.querySelector('.scene').classList.add('fall');render('시야가 흔들린다');narrate('피가 눈가를 타고 흘러내려 유리창 불빛이 번져 보인다.');},3550);schedule(()=>{state.calling=false;state.ended=true;state.lifted=false;state.digits='';render('통화 단절');story('06 · 끊어진 통화','수화기가 손에서 미끄러져 축축한 바닥으로 부딪혔다.\n\n수화기 너머로는 현서의 다급한 목소리가 작게 터져 나왔다. “아저씨? 아저씨, 왜 그래요? 아저씨!”\n\n하지만 인혁의 대답은 이어지지 못했다. 빗물과 피가 뒤섞여 시야를 흐렸고, 통화는 거친 잡음만 남긴 채 끊어졌다.\n\n그날 저녁의 약속은 끝내 지켜지지 못했다.');area.textContent='피습 장면까지 재생되었습니다. 다른 선택을 보려면 처음부터 다시 시작하세요.';narrate('끊어진 수화기 너머로 현서의 목소리가 멀어지고, 빗소리만 남는다.');noise(.72,.022);toast('통화가 강제로 끊겼습니다.');},5200)}
+      let nextScene=null;
+      function awaitScene(fn){nextScene=fn;const area=$('storyActions');area.innerHTML='';const btn=document.createElement('button');btn.type='button';btn.textContent='화면을 클릭해 다음 장면 보기 ›';btn.className='scene-next';btn.onclick=(e)=>{e.stopPropagation();advanceScene()};area.append(btn)}
+      function advanceScene(){if(!nextScene)return;const fn=nextScene;nextScene=null;fn()}
+      function triggerAttack(speech){
+        clearStoryTimers();story('04 · 수화기 너머',speech+'\n\n현서가 숨을 삼키듯 조용해졌다. 그러다 다급한 목소리로 다시 물었다.\n\n“아저씨, 지금 거기 어디예요? 주변에 누구 있어요?”\n\n인혁은 수화기를 귀에 바짝 붙였다. 빗소리가 유리창을 두드렸다.');
+        narrate('빗물이 부스 유리를 두드린다. 인혁은 현서의 대답을 기다린다.');render('통화 중…');awaitScene(showImpact);
+      }
+      function showImpact(){
+        narrate('등 뒤에서 짧은 발소리. 척, 척. 그 직후 파이프가 날아들었다.');
+        beep(110,.045,'triangle',.015);setTimeout(()=>beep(95,.055,'triangle',.015),130);
+        document.querySelector('.scene').classList.add('hit');$('impactFlash').classList.add('show');impactSound();render('충격');
+        story('05 · 내려친 파이프','등 뒤에서 짧게 발소리가 들렸다. 두 걸음쯤.\n\n인혁이 돌아볼 틈도 없이, 누군가 휘두른 금속 파이프가 그의 머리를 거칠게 후려쳤다. 둔탁한 충격이 관자놀이와 뒤통수를 울리듯 파고들었다.');
+        schedule(()=>{$('impactFlash').classList.remove('show');$('bloodOverlay').classList.add('show');document.querySelector('.scene').classList.remove('hit');render('시야가 흔들린다');narrate('피가 눈가를 타고 흐른다. 금속성 울림이 귓속에 길게 남는다.');},650);
+        awaitScene(showEnding);
+      }
+      function showEnding(){
+        stopPhoneLine();clearStoryTimers();document.querySelector('.scene').classList.add('fall');state.calling=false;state.ended=true;state.lifted=false;state.digits='';render('통화 단절');
+        story('06 · 끊어진 통화','무릎이 먼저 차가운 바닥에 닿았다. 이어 어깨가 부스 벽을 스쳤고, 한쪽 뺨 가까이로 물기가 고인 바닥의 불빛이 번져 왔다.\n\n수화기가 손에서 미끄러져 축축한 바닥으로 부딪혔다.\n\n수화기 너머로는 현서의 다급한 목소리가 작게 터져 나왔다. “아저씨? 아저씨, 왜 그래요? 아저씨!”\n\n하지만 인혁의 대답은 이어지지 못했다. 빗물과 피가 뒤섞여 시야를 흐렸고, 통화는 거친 잡음만 남긴 채 끊어졌다.\n\n그제야 인혁은 오늘 저녁, 현서와의 약속을 지키지 못할 것 같다는 생각이 들었다.');
+        $('storyActions').textContent='마지막 장면입니다. 다시 보려면 처음부터 시작하세요.';
+        narrate('차가운 바닥에 쓰러진 채, 현서의 목소리가 멀어지는 것을 듣는다. 유리창에는 빗방울이 가볍게 부딪힌다.');noise(.72,.022);toast('통화가 강제로 끊겼습니다.');
+      }
+      function showConnection(){if(!state.calling)return;startPhoneLine('connected');render('통화 연결');narrate('“여보세요? …아저씨?”');story('03 · 현서의 목소리','“여보세요? …아저씨?”\n\n현서였다.\n\n“이 번호 뭐예요? 어디예요?”\n\n“현서야.”\n\n그는 잠시 말을 골랐다.\n\n현서와 통화가 연결된 것만으로도 잠깐 마음이 놓였다. 우선 상황을 전하고, 동료들에게 연락해 달라고 부탁할 생각이었다.');choiceEnd()}
+      // 빈 화면이나 이야기 텍스트를 눌러 장면을 진행한다. 전화기 조작은 기존대로 유지한다.
+      document.querySelector('.scene').addEventListener('click',e=>{if(e.target.closest('button, a, input, textarea, select'))return;advanceScene()});
+      document.querySelector('.story').addEventListener('click',e=>{if(e.target.closest('button, a, input, textarea, select'))return;advanceScene()});
 function getAudio(){if(!state.sound)return null;try{if(!audio)audio=new (window.AudioContext||window.webkitAudioContext)();if(audio.state==='suspended')audio.resume();return audio;}catch(e){return null}}
+      function startRain(){
+        const ctx=getAudio();if(!ctx)return;
+        if(!rainSource){
+          // A textured bed of gentle rainfall with tiny droplets striking glass.
+          // Use low-level filtered noise and many short stochastic splashes,
+          // not a continuous harsh hiss or pitched synthetic click.
+          const seconds=14,sr=ctx.sampleRate;
+          const buffer=ctx.createBuffer(1,Math.floor(sr*seconds),sr);
+          const samples=buffer.getChannelData(0);
+          let brown=0,previous=0,slow=0;
+          for(let i=0;i<samples.length;i++){
+            const white=Math.random()*2-1;
+            brown=brown*.994+white*.006;
+            previous=previous*.82+white*.18;
+            slow=slow*.99994+(Math.random()-.5)*.00006;
+            const time=i/sr;
+            const intensity=.72+.09*Math.sin(2*Math.PI*time/6.7)+.07*Math.sin(2*Math.PI*time/3.8);
+            samples[i]=(previous*.16+brown*.68)*intensity;
+          }
+          // Soft diffuse patter against a window; no tonal ringing.
+          let t=.12;
+          while(t<seconds-.22){
+            t+=.022+Math.random()*.11;
+            const at=Math.floor(t*sr);
+            const duration=.012+Math.random()*.045;
+            const length=Math.floor(sr*duration);
+            let smooth=0;
+            const strength=.028+Math.random()*.11;
+            for(let j=0;j<length && at+j<samples.length;j++){
+              smooth=smooth*.74+(Math.random()*2-1)*.26;
+              const envelope=Math.exp(-j/(sr*(.004+duration*.23)));
+              samples[at+j]+=smooth*strength*envelope;
+            }
+          }
+          rainSource=ctx.createBufferSource();rainSource.buffer=buffer;rainSource.loop=true;
+          const high=ctx.createBiquadFilter();high.type='highpass';high.frequency.value=160;
+          const low=ctx.createBiquadFilter();low.type='lowpass';low.frequency.value=1750;
+          rainGain=ctx.createGain();rainGain.gain.value=0;
+          rainSource.connect(high).connect(low).connect(rainGain).connect(ctx.destination);rainSource.start();
+        }
+        rainGain.gain.cancelScheduledValues(ctx.currentTime);
+        rainGain.gain.setTargetAtTime(state.sound?.18:0,ctx.currentTime,.5);
+      }
+      function silenceRain(){if(rainGain&&audio){rainGain.gain.setTargetAtTime(0,audio.currentTime,.12)}}
       function beep(freq=500,duration=.08,type='sine',volume=.04){const ctx=getAudio();if(!ctx)return;let o=ctx.createOscillator(),g=ctx.createGain();o.type=type;o.frequency.value=freq;g.gain.setValueAtTime(volume,ctx.currentTime);g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+duration);o.connect(g).connect(ctx.destination);o.start();o.stop(ctx.currentTime+duration)}
       function dual(key){const tones={'1':[697,1209],'2':[697,1336],'3':[697,1477],'4':[770,1209],'5':[770,1336],'6':[770,1477],'7':[852,1209],'8':[852,1336],'9':[852,1477],'*':[941,1209],'0':[941,1336],'#':[941,1477]};const t=tones[key];if(t){beep(t[0],.14,'sine',.027);beep(t[1],.14,'sine',.021)}}
       function noise(duration=.5,volume=.018){let ctx=getAudio();if(!ctx)return;let buffer=ctx.createBuffer(1,Math.ceil(ctx.sampleRate*duration),ctx.sampleRate),x=buffer.getChannelData(0);for(let i=0;i<x.length;i++)x[i]=(Math.random()*2-1)*(.3+.7*(1-i/x.length));let src=ctx.createBufferSource(),g=ctx.createGain(),f=ctx.createBiquadFilter();f.type='lowpass';f.frequency.value=1800;src.buffer=buffer;g.gain.value=volume;src.connect(f).connect(g).connect(ctx.destination);src.start()}
@@ -189,10 +281,10 @@ function getAudio(){if(!state.sound)return null;try{if(!audio)audio=new (window.
       function narrate(text){$('narration').textContent=text}
       function formatted(d){if(!d)return '— — — — — —';if(d.length<=3)return d;if(d.length<=7)return d.slice(0,3)+'-'+d.slice(3);return d.slice(0,3)+'-'+d.slice(3,7)+'-'+d.slice(7)}
       function render(message){$('lcdCredit').textContent='₩ '+state.credit;$('lcdNumber').textContent=formatted(state.digits);$('handset').classList.toggle('lifted',state.lifted);$('handset').setAttribute('aria-pressed',String(state.lifted));$('handset').setAttribute('aria-label',state.lifted?'수화기 내려놓기':'수화기 들기');$('lcdState').textContent=state.calling?'발신 중':state.lifted?'통화 준비':'대기중';$('lcdMessage').textContent=message||(state.calling?'연결을 시도합니다…':!state.lifted?'수화기를 들어주세요':state.credit<=0?'동전을 넣어주세요':'전화번호를 누르세요')}
-      function hangup(){if(state.ended)return toast('이야기가 끝났습니다. 처음부터 다시 시작해 주세요.');if(!state.lifted&&!state.calling){toast('수화기가 제자리에 있습니다.');return}clearTimeout(callTimeout);clearStoryTimers();state.calling=false;state.lifted=false;state.digits='';beep(250,.12,'triangle',.05);render();narrate('딸깍. 수화기가 제자리로 돌아왔다.');toast('통화 종료 · 남은 동전은 반환할 수 있습니다.')}
-      function handset(){if(state.ended)return toast('이야기가 끝났습니다. 처음부터 다시 시작해 주세요.');if(state.lifted){hangup();return}state.lifted=true;beep(350,.16,'sine',.025);setTimeout(()=>beep(440,.22,'sine',.017),60);render();narrate('묵직한 수화기를 들어 귀에 댔다. 신호음이 희미하게 들린다.');toast('수화기를 들었습니다.')}
-      function coin(){if(state.ended)return toast('이야기가 끝났습니다.');if(state.calling)return toast('통화가 끝난 뒤 동전을 넣어주세요.');if(state.credit>=900)return toast('더 이상 동전을 넣을 수 없습니다.');state.credit+=100;beep(900,.045,'square',.012);setTimeout(()=>beep(480,.075,'triangle',.033),95);render();narrate('동전이 기계 속으로 떨어지는 짤그랑 소리가 울렸다.');toast('100원 투입 · 잔액 '+state.credit+'원')}
-      function pressKey(key){if(state.ended)return toast('처음부터 다시 시작해 주세요.');if(missing.has(key)){beep(145,.045,'triangle',.018);render('버튼이 빠져 있습니다');narrate('숫자 '+key+'가 있어야 할 자리에는 차가운 빈 구멍뿐이다.');if(state.phase==='colleague'){state.phase='hyeonseo';$('hyeonseoHint').textContent='현서의 번호를 떠올린다';story('02 · 떠오른 번호','동료의 번호에 필요한 숫자가 없다. 몇 번을 눌러도 차가운 구멍뿐이다.\n\n그때 문득, 외우려고 하지 않아도 기억나는 번호 하나가 떠올랐다. 현서.\n\n지우기 버튼을 눌러 번호를 정리하고 현서에게 전화를 걸어야 한다.');}toast(key+'번 버튼이 뜯겨 나가 눌리지 않습니다.');return}
+      function hangup(){if(state.ended)return toast('이야기가 끝났습니다. 처음부터 다시 시작해 주세요.');if(!state.lifted&&!state.calling){toast('수화기가 제자리에 있습니다.');return}clearTimeout(callTimeout);clearStoryTimers();stopPhoneLine();nextScene=null;state.calling=false;state.lifted=false;state.digits='';beep(250,.12,'triangle',.05);render();narrate('딸깍. 수화기가 제자리로 돌아왔다.');toast('통화 종료 · 남은 동전은 반환할 수 있습니다.')}
+      function handset(){startRain();if(state.ended)return toast('이야기가 끝났습니다. 처음부터 다시 시작해 주세요.');if(state.lifted){hangup();return}state.lifted=true;beep(350,.16,'sine',.025);setTimeout(()=>beep(440,.22,'sine',.017),60);render();narrate('묵직한 수화기를 들어 귀에 댔다. 신호음이 희미하게 들린다.');toast('수화기를 들었습니다.')}
+      function coin(){startRain();if(state.ended)return toast('이야기가 끝났습니다.');if(state.calling)return toast('통화가 끝난 뒤 동전을 넣어주세요.');if(state.credit>=900)return toast('더 이상 동전을 넣을 수 없습니다.');state.credit+=100;beep(900,.045,'square',.012);setTimeout(()=>beep(480,.075,'triangle',.033),95);render();narrate('동전이 기계 속으로 떨어지는 짤그랑 소리가 울렸다.');toast('100원 투입 · 잔액 '+state.credit+'원')}
+      function pressKey(key){startRain();if(state.ended)return toast('처음부터 다시 시작해 주세요.');if(missing.has(key)){beep(145,.045,'triangle',.018);render('버튼이 빠져 있습니다');narrate('숫자 '+key+'가 있어야 할 자리에는 차가운 빈 구멍뿐이다.');if(state.phase==='colleague'){state.phase='hyeonseo';$('hyeonseoHint').textContent='현서의 번호를 떠올린다';story('02 · 떠오른 번호','동료의 번호에 필요한 숫자가 없다. 몇 번을 눌러도 차가운 구멍뿐이다.\n\n그때 문득, 외우려고 하지 않아도 기억나는 번호 하나가 떠올랐다. 현서.\n\n지우기 버튼을 눌러 번호를 정리하고 현서에게 전화를 걸어야 한다.');}toast(key+'번 버튼이 뜯겨 나가 눌리지 않습니다.');return}
         const button=keys.find(b=>b.dataset.key===key);if(button){button.classList.add('pressed');setTimeout(()=>button.classList.remove('pressed'),150)}
         if(state.calling)return toast('연결을 시도하는 중입니다.');
         if(!state.lifted){beep(170,.05);render('수화기를 먼저 드세요');return toast('먼저 수화기를 들어주세요.')}
@@ -203,15 +295,15 @@ function getAudio(){if(!state.sound)return null;try{if(!audio)audio=new (window.
       function clearOne(){if(state.ended)return;if(state.calling)return;const old=state.digits;state.digits=state.digits.slice(0,-1);beep(400,.06,'triangle',.023);render();if(!old)toast('지울 번호가 없습니다.')}
       function call(){if(state.calling||state.ended)return;if(!state.lifted)return toast('수화기를 먼저 들어주세요.');if(state.credit<=0)return toast('동전이 부족합니다.');if(state.digits.length<4)return toast('번호를 더 입력하세요.');
         state.calling=true;state.credit=Math.max(0,state.credit-100);render('연결 중…');beep(440,.3,'sine',.02);
-        if(state.digits===HYEONSEO&&state.phase==='hyeonseo'){story('03 · 현서에게','뚜르르. 뚜르르.\n\n인혁은 축축한 유리창 너머를 바라보았다. 제발 전화를 받기를.');callTimeout=setTimeout(()=>{if(!state.calling)return;render('통화 연결');narrate('“여보세요? …아저씨?”');story('03 · 현서의 목소리','“여보세요? …아저씨?”\n\n현서였다.\n\n“이 번호 뭐예요? 어디예요?”\n\n“현서야.”\n\n그는 잠시 말을 골랐다.\n\n오늘 저녁엔 같이 밥을 먹기로 했었는데. 결국 약속을 지키지 못할 것 같았다.');choiceEnd()},2400);return}
+        if(state.digits===HYEONSEO&&state.phase==='hyeonseo'){startPhoneLine('ring');story('03 · 현서에게','뚜르르. 뚜르르.\n\n인혁은 축축한 유리창 너머를 바라보았다. 제발 전화를 받기를.');awaitScene(showConnection);return}
         callTimeout=setTimeout(()=>{state.calling=false;render('연결 실패');noise(.4,.03);toast('번호가 연결되지 않습니다.');story('01 · 닿지 않는 번호','번호가 온전하지 않다. 인혁은 다시 키패드를 내려다보았다.\n\n뜯겨 나간 버튼들. 동료에게 연락할 방법이 없다.')},1800)
       }
       function refund(){if(state.ended)return toast('이야기가 끝났습니다.');if(state.calling)return toast('통화 중에는 반환할 수 없습니다.');if(!state.credit)return toast('반환할 동전이 없습니다.');const amount=state.credit;state.credit=0;beep(700,.065,'triangle',.027);setTimeout(()=>beep(480,.12,'triangle',.031),100);render();narrate('반환구 안에서 동전이 달그락 소리를 냈다.');toast(amount+'원 반환')}
       $('colleagueHint').onclick=()=>{toast('동료: '+COLLEAGUE+' (빠진 버튼이 필요함)');narrate('인혁은 수첩에 적어둔 동료의 번호를 확인한다.')} ;$('hyeonseoHint').onclick=()=>{if(state.phase!=='hyeonseo')return toast('우선 동료에게 연락을 시도해야 합니다.');toast('현서: '+HYEONSEO);narrate('수없이 걸었던 번호. 현서의 번호만은 정확히 기억하고 있다.');};
-      $('restart').onclick=()=>{clearTimeout(callTimeout);clearStoryTimers();resetEffects();Object.assign(state,{lifted:false,credit:0,digits:'',calling:false,phase:'colleague',ended:false});story('01 · 빗속의 전화','류인혁은 조직의 은신처를 발견했다. 그러나 휴대전화의 배터리는 꺼져 있었다.\n\n공중전화 박스 안, 번호 버튼 세 개가 뜯겨 나가 있었다. 먼저 동료에게 연락해야 한다.');$('storyActions').innerHTML='<button id="colleagueHint">동료 연락처를 확인한다</button><button id="hyeonseoHint">현서의 번호를 떠올린다</button>';$('colleagueHint').onclick=()=>toast('동료: '+COLLEAGUE+' (빠진 버튼이 필요함)');$('hyeonseoHint').onclick=()=>state.phase==='hyeonseo'?toast('현서: '+HYEONSEO):toast('우선 동료에게 연락을 시도해야 합니다.');narrate('유리창에 빗줄기가 흐른다. 멀리 항구의 불빛이 희미하다.');render()};
+      $('restart').onclick=()=>{stopPhoneLine();clearTimeout(callTimeout);clearStoryTimers();nextScene=null;resetEffects();if(state.sound)startRain();Object.assign(state,{lifted:false,credit:0,digits:'',calling:false,phase:'colleague',ended:false});story('01 · 빗속의 전화','류인혁은 조직의 은신처를 발견했다. 그러나 휴대전화의 배터리는 꺼져 있었다.\n\n공중전화 박스 안, 번호 버튼 세 개가 뜯겨 나가 있었다. 먼저 동료에게 연락해야 한다.');$('storyActions').innerHTML='<button id="colleagueHint">동료 연락처를 확인한다</button><button id="hyeonseoHint">현서의 번호를 떠올린다</button>';$('colleagueHint').onclick=()=>toast('동료: '+COLLEAGUE+' (빠진 버튼이 필요함)');$('hyeonseoHint').onclick=()=>state.phase==='hyeonseo'?toast('현서: '+HYEONSEO):toast('우선 동료에게 연락을 시도해야 합니다.');narrate('유리창에 빗줄기가 흐른다. 멀리 항구의 불빛이 희미하다.');render()};
       $('handset').addEventListener('click',handset);$('coinBtn').addEventListener('click',coin);$('clearBtn').addEventListener('click',clearOne);$('callBtn').addEventListener('click',call);$('endBtn').addEventListener('click',hangup);$('refundBtn').addEventListener('click',refund);
       keys.forEach(b=>b.addEventListener('click',()=>pressKey(b.dataset.key)));
-      $('soundBtn').addEventListener('click',()=>{state.sound=!state.sound;const el=$('soundBtn');el.setAttribute('aria-pressed',String(state.sound));el.setAttribute('aria-label',state.sound?'효과음 끄기':'효과음 켜기');el.textContent=state.sound?'♪ 소리 켜짐':'♪ 소리 꺼짐';if(state.sound)beep(700,.08)});
+      $('soundBtn').addEventListener('click',()=>{state.sound=!state.sound;const el=$('soundBtn');el.setAttribute('aria-pressed',String(state.sound));el.setAttribute('aria-label',state.sound?'효과음 끄기':'효과음 켜기');el.textContent=state.sound?'♪ 소리 켜짐':'♪ 소리 꺼짐';if(state.sound){startRain();if(state.calling)startPhoneLine(state.digits===HYEONSEO&&nextScene===showConnection?'ring':'connected');beep(700,.08)}else{silenceRain();stopPhoneLine()}});
       const overlay=$('helpOverlay');let lastFocus=null;
       function showHelp(){lastFocus=document.activeElement;overlay.hidden=false;$('closeHelp').focus()}
       function hideHelp(){overlay.hidden=true;lastFocus?.focus()}
